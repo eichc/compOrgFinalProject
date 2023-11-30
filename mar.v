@@ -1,0 +1,3 @@
+module MAR ();
+    
+endmodule
