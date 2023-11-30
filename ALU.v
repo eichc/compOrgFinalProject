@@ -1,10 +1,9 @@
-module ALU (Out, In1, In2, COut, CIn, Op);
+module ALU (ac, mbr, Op, clk);
 parameter op_size = 4;
-input [31:0] In1, In2;
+input clk;
+input [15:0] ac;
 input [op_size-1:0] Op;
-input CIn;
-output [31:0] Out;
-output Cout;
+inout [15:0] mbr;
 
 
 
