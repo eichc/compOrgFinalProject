@@ -1,4 +1,4 @@
-module AC (in, acc, clk, reset);
+module AC (in, clk, reset, acc);
     input [7:0] in;
     input clk, reset;
     reg [7:0] acc;
