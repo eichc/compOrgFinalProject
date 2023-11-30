@@ -1,10 +1,10 @@
 module AC (in, clk, reset, acc);
-    input [7:0] in;
+    input [15:0] in;
     input clk, reset;
-    reg [7:0] acc;
+    reg [15:0] acc;
     always @(clk) begin
         if (reset)
-            acc <= 8'b00000000;
+            acc <= 8'b0000000000000000;
         else
             acc <= acc + in;
     end
