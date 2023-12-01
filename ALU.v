@@ -1,8 +1,8 @@
 module ALU (ac, mbr, clk, control);
 input clk;
-input [15:0] ac;
+input [15:0] mbr;
 input [2:0] control
-inout reg [15:0] mbr;
+inout reg [15:0] ac;
 
 always @(posedge clk) begin
     case (control)
