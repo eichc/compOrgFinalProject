@@ -1,19 +1,19 @@
 Address   Value     Code
-100                 Loop, Load    B       / Load Fib2 into AC
-101                 Add       A          / Add Fib1 to Fib2
-102                 Store     Sum       / Store the new number
-103                 Load      B
-104                 Store     A         / Move Fib2 to Fib1
-105                 Load      Sum
-106                 Store     B         / Move the new number to Fib2
-107                 Load      Ctr        / Load the loop control variable
-108                 Add       Neg1       / Decrement the loop control variable by one
-109                 Store     Ctr        / Store the new value of the loop control variable
-110                 Skip      1        / If control variable = 0, skip next instruction to terminate the loop
-111                 Jump      Loop       / Otherwise, go to Loop
-112                 Halt                 / Terminate program
-113                 A,    Dec     1          / Fib1, initially 1 because F(1) = 1
-114                 B,    Dec     1          / Fib2, initially 1 because F(2) = 1
-115                 Sum, Dec     0          / The next Fib number
-116                 Ctr,  Dec     9          / The loop control variable
-117                 Dec, Dec     -1         / Used to decrement by 1
+100       110E      Loop, Load    B       / Load Fib2 into AC
+101       710D      Add       A          / Add Fib1 to Fib2
+102       210F      Store     Sum       / Store the new number
+103       110E      Load      B
+104       210D      Store     A         / Move Fib2 to Fib1
+105       110F      Load      Sum
+106       210E      Store     B         / Move the new number to Fib2
+107       1110      Load      Ctr        / Load the loop control variable
+108       7111      Add       Neg1       / Decrement the loop control variable by one
+109       2110      Store     Ctr        / Store the new value of the loop control variable
+10A       4001      Skip      1        / If control variable = 0, skip next instruction to terminate the loop
+10B       5100      Jump      Loop       / Otherwise, go to Loop
+10C       6000      Halt                 / Terminate program
+10D       0001      A,    Dec     1          / Fib1, initially 1 because F(1) = 1
+10E       0001      B,    Dec     1          / Fib2, initially 1 because F(2) = 1
+10F       0000      Sum, Dec     0          / The next Fib number
+110       1001      Ctr,  Dec     9          / The loop control variable
+111       FFFF      Dec, Dec     -1         / Used to decrement by 1
