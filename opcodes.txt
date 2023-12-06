@@ -1,0 +1,11 @@
+Load
+Store
+Clear
+Skip
+Jump
+Halt
+Add
+Subtract
+And
+Or
+Not

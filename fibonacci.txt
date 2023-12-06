@@ -1,4 +1,4 @@
-Address Value       Code
+Address   Value     Code
 100                 Loop, Load    B       / Load Fib2 into AC
 101                 Add       A          / Add Fib1 to Fib2
 102                 Store     Sum       / Store the new number
