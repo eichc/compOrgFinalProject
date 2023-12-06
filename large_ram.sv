@@ -1,4 +1,3 @@
-// Adopted from https://www.chipverify.com/verilog/verilog-single-port-ram
 `include "ram.sv"
 `include "decoder.sv"
 
