@@ -1,0 +1,19 @@
+Address Value       Code
+100                 Loop, Load    B       / Load Fib2 into AC
+101                 Add       A          / Add Fib1 to Fib2
+102                 Store     Sum       / Store the new number
+103                 Load      B
+104                 Store     A         / Move Fib2 to Fib1
+105                 Load      Sum
+106                 Store     B         / Move the new number to Fib2
+107                 Load      Ctr        / Load the loop control variable
+108                 Add       Neg1       / Decrement the loop control variable by one
+109                 Store     Ctr        / Store the new value of the loop control variable
+110                 Skip      1        / If control variable = 0, skip next instruction to terminate the loop
+111                 Jump      Loop       / Otherwise, go to Loop
+112                 Halt                 / Terminate program
+113                 A,    Dec     1          / Fib1, initially 1 because F(1) = 1
+114                 B,    Dec     1          / Fib2, initially 1 because F(2) = 1
+115                 Sum, Dec     0          / The next Fib number
+116                 Ctr,  Dec     9          / The loop control variable
+117                 Dec, Dec     -1         / Used to decrement by 1
