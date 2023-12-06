@@ -1,13 +1,12 @@
-Load    0001
-Store   0010
-Clear   0011
-Skip    0100
-Jump    0101
-Halt    0110
-Add     0111
+Operation   Opcode
+Load        0001
+Store       0010
+Clear       0011
+Skip        0100
+Jump        0101
+Halt        0110
+Add         0111
 Subtract    1000
-And     1001
-Or      1010
-Not     1011
-
-
+And         1001
+Or          1010
+Not         1011
