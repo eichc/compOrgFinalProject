@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ps
 
-module single_port_sync_ram
+module single_ram
   # (parameter ADDR_WIDTH = 10, // 8192 locations = 13 bits
      parameter DATA_WIDTH = 8, //8 bits per memory location
      parameter LENGTH = (1<<ADDR_WIDTH) //2^ADDR_WIDTH total locations

@@ -13,7 +13,7 @@ module test_ram;
   wire [DATA_WIDTH-1:0] data;
   reg [DATA_WIDTH-1:0] testbench_data;
 
-  single_port_sync_ram_large  #(.DATA_WIDTH(DATA_WIDTH)) u0
+  large_ram  #(.DATA_WIDTH(DATA_WIDTH)) u0
   (   .clk(clk),
       .addr(addr),
       .data(data[DATA_WIDTH-1:0]),

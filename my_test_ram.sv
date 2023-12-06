@@ -13,7 +13,7 @@ module my_test_ram;
     reg [DATA_WIDTH-1:0] testbench_data;
 
 
-  single_port_sync_ram #(.DATA_WIDTH(DATA_WIDTH)) u0
+  single_ram #(.DATA_WIDTH(DATA_WIDTH)) u0
   (   .clk(clk),
       .addr(addr),
       .data(data),

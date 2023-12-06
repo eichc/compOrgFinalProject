@@ -3,7 +3,7 @@
 
 `timescale 1 ns / 1 ps
 
-module single_port_sync_ram_large
+module large_ram
   # ( parameter ADDR_WIDTH = 12,
       parameter DATA_WIDTH = 16,
       parameter DATA_WIDTH_SHIFT = 1
@@ -24,7 +24,7 @@ module single_port_sync_ram_large
       .out(chip_select) 
   );
   
-  single_port_sync_ram  #(.DATA_WIDTH(DATA_WIDTH/2)) u00
+  single_ram  #(.DATA_WIDTH(DATA_WIDTH/2)) u00
   (   .clk(clk),
       .addr(addr[ADDR_WIDTH-3:0]),
       .data(data[(DATA_WIDTH>>DATA_WIDTH_SHIFT)-1:0]),
@@ -32,7 +32,7 @@ module single_port_sync_ram_large
       .write_enable(write_enable),
       .output_enable(output_enable)
   );
-  single_port_sync_ram #(.DATA_WIDTH(DATA_WIDTH>>DATA_WIDTH_SHIFT)) u01
+  single_ram #(.DATA_WIDTH(DATA_WIDTH>>DATA_WIDTH_SHIFT)) u01
   (   .clk(clk),
       .addr(addr[ADDR_WIDTH-3:0]),
       .data(data[DATA_WIDTH-1:DATA_WIDTH>>DATA_WIDTH_SHIFT]),
@@ -41,7 +41,7 @@ module single_port_sync_ram_large
       .output_enable(output_enable)
   );
 
-  single_port_sync_ram  #(.DATA_WIDTH(DATA_WIDTH/2)) u10
+  single_ram  #(.DATA_WIDTH(DATA_WIDTH/2)) u10
   (   .clk(clk),
       .addr(addr[ADDR_WIDTH-3:0]),
       .data(data[(DATA_WIDTH>>DATA_WIDTH_SHIFT)-1:0]),
@@ -49,7 +49,7 @@ module single_port_sync_ram_large
       .write_enable(write_enable),
       .output_enable(output_enable)
   );
-  single_port_sync_ram #(.DATA_WIDTH(DATA_WIDTH>>DATA_WIDTH_SHIFT)) u11
+  single_ram #(.DATA_WIDTH(DATA_WIDTH>>DATA_WIDTH_SHIFT)) u11
   (   .clk(clk),
       .addr(addr[ADDR_WIDTH-3:0]),
       .data(data[DATA_WIDTH-1:DATA_WIDTH>>DATA_WIDTH_SHIFT]),
@@ -58,7 +58,7 @@ module single_port_sync_ram_large
       .output_enable(output_enable)
   );
 
-  single_port_sync_ram  #(.DATA_WIDTH(DATA_WIDTH/2)) u20
+  single_ram  #(.DATA_WIDTH(DATA_WIDTH/2)) u20
   (   .clk(clk),
       .addr(addr[ADDR_WIDTH-3:0]),
       .data(data[(DATA_WIDTH>>DATA_WIDTH_SHIFT)-1:0]),
@@ -66,7 +66,7 @@ module single_port_sync_ram_large
       .write_enable(write_enable),
       .output_enable(output_enable)
   );
-  single_port_sync_ram #(.DATA_WIDTH(DATA_WIDTH>>DATA_WIDTH_SHIFT)) u21
+  single_ram #(.DATA_WIDTH(DATA_WIDTH>>DATA_WIDTH_SHIFT)) u21
   (   .clk(clk),
       .addr(addr[ADDR_WIDTH-3:0]),
       .data(data[DATA_WIDTH-1:DATA_WIDTH>>DATA_WIDTH_SHIFT]),
@@ -75,7 +75,7 @@ module single_port_sync_ram_large
       .output_enable(output_enable)
   );
 
-  single_port_sync_ram  #(.DATA_WIDTH(DATA_WIDTH/2)) u30
+  single_ram  #(.DATA_WIDTH(DATA_WIDTH/2)) u30
   (   .clk(clk),
       .addr(addr[ADDR_WIDTH-3:0]),
       .data(data[(DATA_WIDTH>>DATA_WIDTH_SHIFT)-1:0]),
@@ -83,7 +83,7 @@ module single_port_sync_ram_large
       .write_enable(write_enable),
       .output_enable(output_enable)
   );
-  single_port_sync_ram #(.DATA_WIDTH(DATA_WIDTH>>DATA_WIDTH_SHIFT)) u31
+  single_ram #(.DATA_WIDTH(DATA_WIDTH>>DATA_WIDTH_SHIFT)) u31
   (   .clk(clk),
       .addr(addr[ADDR_WIDTH-3:0]),
       .data(data[DATA_WIDTH-1:DATA_WIDTH>>DATA_WIDTH_SHIFT]),
