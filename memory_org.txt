@@ -2,6 +2,7 @@ Total memory size = 64KiB
 Memory Organization = 8Ki x 8 --> 8KiB --> 8192 locations --> 13 bits in address
 8 chips --> 64KiB --> 32Ki x 16 --> 65,536 locations --> 16 bits in address
 
+
 Kuzmin Example
 4Ki x 8 per chip --> 4096 locations --> 12 bits in address
-16Ki x 16 total
+16Ki x 16 total --> 15 bits in address
