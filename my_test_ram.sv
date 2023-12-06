@@ -1,7 +1,7 @@
 `timescale 1 ns / 1 ps
 
 module my_test_ram;
-    parameter ADDR_WIDTH = 13;
+    parameter ADDR_WIDTH = 10;
     parameter DATA_WIDTH = 8;
 
     reg clk;
@@ -23,7 +23,7 @@ module my_test_ram;
   );
 
     always #20 clk = ~clk;
-    assign data = !output_enable ? testbench_data : hz;
+    assign data = !output_enable ? testbench_data : 'hz;
 
     integer i;
     initial begin
@@ -41,7 +41,7 @@ module my_test_ram;
         repeat (1) @(posedge clk) addr <= i; write_enable <= 0; chip_select <= 1; output_enable <= 1;
     end
 
-    @(posedge clk) chip_select <=0;
+      @(posedge clk) chip_select <=0;
 
     #360 $finish;
 
