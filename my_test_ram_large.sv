@@ -1,8 +1,7 @@
-// Adopted from https://www.chipverify.com/verilog/verilog-single-port-ram
 `timescale 1 ns / 1 ps
 
 module test_ram;
-  parameter ADDR_WIDTH = 14;
+  parameter ADDR_WIDTH = 12;
   parameter DATA_WIDTH = 16;
 
   reg clk;
@@ -17,7 +16,7 @@ module test_ram;
   (   .clk(clk),
       .addr(addr),
       .data(data[DATA_WIDTH-1:0]),
-      .chip_select(chip_select),
+      .chip_select_in(chip_select),
       .write_enable(write_enable),
       .output_enable(output_enable)
   );

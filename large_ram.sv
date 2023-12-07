@@ -12,7 +12,7 @@ module large_ram
   (   input clk,
       input [ADDR_WIDTH-1:0] addr,
       inout [DATA_WIDTH-1:0] data,
-      input chip_select,
+      input chip_select_in,
       input write_enable,
       input output_enable
   );
