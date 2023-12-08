@@ -1,0 +1,7 @@
+Total memory size = 64KiB
+Memory Organization = 8Ki x 8 --> 8KiB
+64KiB --> 8 chips
+
+Kuzmin's Example
+4Ki x 8 per chip
+16Ki x 16 total

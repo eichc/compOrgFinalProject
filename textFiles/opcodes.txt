@@ -10,14 +10,3 @@ Subtract    1000
 And         1001
 Or          1010
 Not         1011
-
-
-kuzmin opcodes:
-
-0011 for add
-0111 for halt
-0001 for load
-0010 store
-1010 clear
-1000 for skip
-1001 for jump
