@@ -18,6 +18,14 @@ module indirect_cpu;
   wire [DATA_WIDTH-1:0] data;
   reg [DATA_WIDTH-1:0] testbench_data;
   assign data = !output_enable ? testbench_data : 'hz;
+  
+  cache #(.DATA_WIDTH(DATA_WIDTH)) myCache
+  (   .clk(clk),
+      .addr(MAR),
+      .data(data[DATA_WIDTH-1:0]),
+      .write_enable(write_enable),
+      .output_enable(output_enable)
+  );
 
   large_ram  #(.DATA_WIDTH(DATA_WIDTH)) ram
   (   .clk(clk),
