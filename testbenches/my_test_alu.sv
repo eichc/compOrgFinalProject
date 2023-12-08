@@ -22,8 +22,7 @@ module testALU;
         B = 16'h01AC;
         ALU_Sel = 3'h0;
 
-        for (i = 0; i < 6; i=i+1) //for 6 times for 5 operations
-        
+        for (i = 0; i < 8; i=i+1) 
         begin
             ALU_Sel = ALU_Sel +  3'h1;
             #10;

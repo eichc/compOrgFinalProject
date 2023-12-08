@@ -33,11 +33,11 @@ module my_test_ram;
 
     repeat (2) @ (posedge clk);
 
-    for (i = 0; i < 16; i = i + 1) begin //check the parameters of this line
+    for (i = 0; i < 16; i = i + 1) begin
         repeat (1) @(posedge clk) addr <= i; write_enable <= 1; chip_select <= 1; output_enable <= 0; testbench_data <= $random;
     end
 
-    for (i = 0; i < 16; i = i + 1) begin //check the parameters of this line
+    for (i = 0; i < 16; i = i + 1) begin
         repeat (1) @(posedge clk) addr <= i; write_enable <= 0; chip_select <= 1; output_enable <= 1;
     end
 

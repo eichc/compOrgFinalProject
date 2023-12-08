@@ -1,3 +1,5 @@
+`include "large_ram.sv"
+`include "alu.sv"
 `timescale 1 ns / 1 ps
 
 module cpu;

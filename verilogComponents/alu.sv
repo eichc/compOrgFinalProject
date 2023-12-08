@@ -19,7 +19,7 @@ module alu( input[15:0] A,B,
         3'b011: //OR
             ALU_Result <= A | B; 
         3'b100: //not
-            ALU_Result <= ~;
+            ALU_Result <= ~A;
         3'b101: //clear
             ALU_Result <= 0;
         default: ALU_Result <= A; 

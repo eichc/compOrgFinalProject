@@ -19,11 +19,12 @@ module large_ram
   
   wire [3:0] chip_select;
   
-  decoder #(.ENCODE_WIDTH(2)) dec
+  decoder #(.ENCODE_WIDTH(2)) dec //determine which 2 chips should be activated
   (   .in(addr[ADDR_WIDTH-1:ADDR_WIDTH-2]),
       .out(chip_select) 
   );
   
+  //these 8 chips work in pairs, each storing half of the 16-bit data
   single_ram  #(.DATA_WIDTH(DATA_WIDTH/2)) u00
   (   .clk(clk),
       .addr(addr[ADDR_WIDTH-3:0]),
