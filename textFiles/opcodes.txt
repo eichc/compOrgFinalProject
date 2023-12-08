@@ -10,3 +10,5 @@ Subtract    1000
 And         1001
 Or          1010
 Not         1011
+LoadI       1100
+StoreI      1101
