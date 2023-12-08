@@ -11,15 +11,15 @@ module alu( input[15:0] A,B,
     begin
         case(ALU_Sel)
         3'b000: //addition
-            ALU_Result <= A + B ; 
+            ALU_Result <= A + B; 
         3'b001: //subtraction
-            ALU_Result <= A - B ;
+            ALU_Result <= A - B;
         3'b010: //AND
             ALU_Result <= A & B; 
         3'b011: //OR
-            ALU_Result <= A | B ; 
+            ALU_Result <= A | B; 
         3'b100: //not
-            ALU_Result <= ~A ;
+            ALU_Result <= ~;
         3'b101: //clear
             ALU_Result <= 0;
         default: ALU_Result <= A; 
