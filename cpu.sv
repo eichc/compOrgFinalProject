@@ -31,7 +31,7 @@ module cpu;
   reg [15:0] A;
   reg [15:0] B;
   reg [15:0] ALU_Out;
-  reg [3:0] ALU_Sel;
+  reg [2:0] ALU_Sel;
   alu my_alu(
     .A(A),
     .B(B),  // ALU 16-bit Inputs
@@ -83,44 +83,66 @@ module cpu;
           @(posedge clk) PC <= PC + 2;
           // Decode and execute
       case(IR[15:12])
-        4'b0001: begin
+        4'b0001: begin //load
               @(posedge clk) MAR <= IR[11:0];
               @(posedge clk) MBR <= data;
               @(posedge clk) AC <= MBR;
         end 
-		4'b0010: begin
+		4'b0010: begin //store
               @(posedge clk) MAR <= IR[11:0];
               @(posedge clk) MBR <= AC;
               @(posedge clk) write_enable <= 1; output_enable <= 0; testbench_data <= MBR;      
         end
-        4'b0011: begin
-              @(posedge clk) MAR <= IR[11:0];
-              @(posedge clk) MBR <= data;
-              @(posedge clk) ALU_Sel <= 'b01; A <= AC; B <= MBR;
-              @(posedge clk) AC <= ALU_Out;
+        4'b0011: begin //clear
+          @(posedge clk) AC <= 0;
         end
-        4'b0111: begin
-              @(posedge clk) PC <= PC - 1;
-        end
-        4'b1000: begin
+        4'b0100: begin //skip
           @(posedge clk)
           if(IR[1:0]==2'b01 && AC == 0) PC <= PC + 2;
           else if(IR[1:0]==2'b00 && AC < 0) PC <= PC + 2;
           else if(IR[1:0]==2'b10 && AC > 0) PC <= PC + 2;
         end
-        4'b1001: begin
+        4'b0101: begin //jump
               @(posedge clk) PC <= IR[11:0];
         end
-        4'b1010: begin
-          @(posedge clk) AC <= 0;
+        4'b0110: begin //halt
+              @(posedge clk) PC <= PC - 2;
+        end 
+        4'b0111: begin //add
+              @(posedge clk) MAR <= IR[11:0];
+              @(posedge clk) MBR <= data;
+              @(posedge clk) ALU_Sel <= 'b000; A <= AC; B <= MBR;
+              @(posedge clk) AC <= ALU_Out;
         end
+        4'b1000: begin //subtract
+              @(posedge clk) MAR <= IR[11:0];
+              @(posedge clk) MBR <= data;
+              @(posedge clk) ALU_Sel <= 'b001; A <= AC; B <= MBR;
+              @(posedge clk) AC <= ALU_Out;
+        end
+        4'b1001: begin //and
+              @(posedge clk) MAR <= IR[11:0];
+              @(posedge clk) MBR <= data;
+              @(posedge clk) ALU_Sel <= 'b010; A <= AC; B <= MBR;
+              @(posedge clk) AC <= ALU_Out;
+        end
+        4'b1010: begin //or
+              @(posedge clk) MAR <= IR[11:0];
+              @(posedge clk) MBR <= data;
+              @(posedge clk) ALU_Sel <= 'b011; A <= AC; B <= MBR;
+              @(posedge clk) AC <= ALU_Out;
+        end
+        4'b1011: begin //not
+              @(posedge clk) ALU_Sel <= 'b100; A <= AC; B <= 'b0;
+              @(posedge clk) AC <= ALU_Out;
+        end       
           
       endcase
          
     end
     
       
-    @(posedge clk) MAR <= 'h10D; write_enable <= 0; chip_select <= 1; output_enable <= 1;
+    @(posedge clk) MAR <= 'h11E; write_enable <= 0; chip_select <= 1; output_enable <= 1;
     
     @(posedge clk)
         
