@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module testALU;
+module test_alu;
 
     //inputs
     reg[15:0] A,B;

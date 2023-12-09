@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ps
 
-module my_test_decoder;
+module test_decoder;
   parameter ENCODE_WIDTH = 2;
   parameter DECODE_WIDTH = 2**ENCODE_WIDTH;
 

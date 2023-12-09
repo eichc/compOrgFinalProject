@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ps
 
-module my_test_ram;
+module test_ram;
     parameter ADDR_WIDTH = 10;
     parameter DATA_WIDTH = 8;
 
