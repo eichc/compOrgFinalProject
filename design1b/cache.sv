@@ -1,7 +1,7 @@
 `timescale 1 ns / 1 ps
 
 module cache
-  # (parameter ADDR_WIDTH = 10,
+  # (parameter ADDR_WIDTH = 12,
      parameter DATA_WIDTH = 16, //16 bits per memory location
      parameter LENGTH = (1<<ADDR_WIDTH), //2^ADDR_WIDTH total locations
      parameter SIZE = 2500
